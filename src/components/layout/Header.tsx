@@ -56,7 +56,7 @@ export function Header() {
                 <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-teal-500">
                 <img
                   className="h-12 w-auto mb-4 mt-4"
-                  src="/public/Logo-Comvision-nav.png"
+                  src="https://www.comvision.pk/Assets/images/Logo/Logo-Comvision-nav.png"
                   alt="Comvision"
                 />
                 </span>
