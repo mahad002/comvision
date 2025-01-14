@@ -22,9 +22,9 @@ export function Header() {
       <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8" aria-label="Global">
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
-            <img
-              className="h-8 w-auto lg:h-12"
-              src="/comvision-logo.png"
+          <img
+              className="h-12 w-auto mb-4"
+              src="https://www.comvision.pk/Assets/images/Logo/Logo-Comvision-nav.png"
               alt="Comvision"
             />
           </Link>
