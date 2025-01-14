@@ -1,9 +1,14 @@
 import { useState } from 'react';
 import { Link } from 'react-router-dom';
-import { Menu, X, Sun, Moon, ChevronDown } from 'lucide-react';
+import { Menu, X, Sun, Moon } from 'lucide-react';
+// import { ChevronDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { useTheme } from 'next-themes';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
+// import { ibsServices } from '../../data/ibsServices';
+// import { ourServices } from '../../data/ourServices';
+// import { products } from '../../data/products';
+
 
 const navigation = [
   { name: 'Services', href: '/services' },
@@ -20,7 +25,7 @@ export function Header() {
   return (
     <header className="fixed w-full z-50 bg-white dark:bg-gray-900">
       {/* Top Bar */}
-      <div className="bg-gray-100 dark:bg-gray-800">
+      {/* <div className="bg-gray-100 dark:bg-gray-800">
         <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
           <div className="flex h-10 items-center justify-between text-sm">
             <div className="flex items-center space-x-6">
@@ -39,7 +44,7 @@ export function Header() {
             </div>
           </div>
         </div>
-      </div>
+      </div> */}
 
       {/* Main Navigation */}
       <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
@@ -49,7 +54,11 @@ export function Header() {
             <div className="flex">
               <Link to="/" className="-m-1.5 p-1.5">
                 <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-teal-500">
-                  ComVision
+                <img
+                  className="h-12 w-auto mb-4 mt-4"
+                  src="/public/Logo-Comvision-nav.png"
+                  alt="Comvision"
+                />
                 </span>
               </Link>
             </div>

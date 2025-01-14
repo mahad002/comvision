@@ -8,7 +8,7 @@ export function Footer() {
           <div className="col-span-1 md:col-span-2">
             <img
               className="h-12 w-auto mb-4"
-              src="/comvision-logo.png"
+              src="/public/Logo-Comvision-nav.png"
               alt="Comvision"
             />
             <p className="text-gray-600 dark:text-gray-400 max-w-md">
