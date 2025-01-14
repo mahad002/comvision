@@ -1,13 +1,17 @@
 import { ReactNode } from 'react';
 import {
-  Store, Monitor, Settings, Utensils, CakeSlice, Coffee, Hospital, Package, School,
-  Car, Fuel, Factory, Box, Clock, Flask, Kitchen, Archive, Building, Glasses, Phone,
-  Coins, DollarSign, Key, Cloud, ShoppingCart, Smartphone, Shirt, Gamepad, Shoes,
-  Palette, Hammer, GalleryVerticalEnd, DoorClosed, Construction, Pill, Beef,
-  Warehouse, Laptop, Cpu, PackageCheck, Users, Boxes, Receipt, Gift,
-  BookOpen, Scissors, Briefcase, Building2, ShoppingBag, Salad, HardDrive,
-  Wrench, BookCheck, Cog, UserCircle, ClipboardList, Banknote, Home
+  Store, Monitor, Settings, Utensils, CakeSlice, Coffee, Hospital, School,
+   Factory, Box, Clock,  Glasses, Cloud, ShoppingCart, Smartphone, Shirt, 
+  Palette, Pill,
+  Cpu, PackageCheck,  Boxes,
+  BookOpen, Scissors,
 } from 'lucide-react';
+
+// import {
+//   Package, Flask, Kitchen, Archive, Building, Phone,  Briefcase, Building2, ShoppingBag, Salad, HardDrive,
+//   Wrench, BookCheck, Cog, UserCircle, ClipboardList, Banknote, Home,  Hammer, GalleryVerticalEnd, DoorClosed, Construction, 
+//   Coins, DollarSign, Key, Warehouse, Laptop,  Receipt, Gift, Users,  Beef, Gamepad, Shoes, Car, Fuel,
+// } from 'lucide-react';
 
 export interface Product {
   name: string;

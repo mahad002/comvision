@@ -1,6 +1,7 @@
 import { motion } from 'framer-motion';
-import { Code, Building2, MapPin, Award, Shield, Clock, Heart, Brain, Sparkles, Target } from 'lucide-react';
+import { Code, Building2, MapPin, Award, Brain, Sparkles, Target } from 'lucide-react';
 import { Card } from "@/components/ui/card";
+// import { Shield, Clock, Heart } from 'lucide-react';
 
 const stats = [
   { label: 'Years Experience', value: '25+', icon: <Building2 className="w-5 h-5" /> },
@@ -137,7 +138,7 @@ export function AboutSection() {
           viewport={{ once: true }}
           className="grid grid-cols-2 lg:grid-cols-4 gap-4 lg:gap-6 mb-16 lg:mb-24"
         >
-          {stats.map((stat, index) => (
+          {stats.map((stat) => (
             <motion.div
               key={stat.label}
               variants={itemVariants}
