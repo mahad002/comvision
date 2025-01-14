@@ -15,14 +15,16 @@ export const ibsServices: IBSService[] = [
     icon: Network,
     description: "Complete networking solutions for your business infrastructure",
     href: "networking",
-    image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2000&auto=format&fit=crop"
+    image: "https://www.comvision.pk/Assets/images/OperationalServices/Networking.jpg"
+    // image: "https://images.unsplash.com/photo-1558494949-ef010cbdcc31?q=80&w=2000&auto=format&fit=crop"
   },
   {
     title: "IP & Digital Camera Installation",
     icon: Camera,
     description: "Professional security camera installation and maintenance",
     href: "ip-camera",
-    image: "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2000&auto=format&fit=crop"
+    image: "https://www.comvision.pk/Assets/images/OperationalServices/IP%20&%20Digital%20Camra%20Installation.jpeg"
+    // image: "https://images.unsplash.com/photo-1557862921-37829c790f19?q=80&w=2000&auto=format&fit=crop"
   },
   {
     title: "POS Hardware",
