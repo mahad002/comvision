@@ -23,7 +23,7 @@ export function Header() {
         <div className="flex lg:flex-1">
           <Link to="/" className="-m-1.5 p-1.5">
           <img
-              className="h-12 w-auto mb-4"
+              className="h-10 w-auto mb-2"
               src="https://www.comvision.pk/Assets/images/Logo/Logo-Comvision-nav.png"
               alt="Comvision"
             />
