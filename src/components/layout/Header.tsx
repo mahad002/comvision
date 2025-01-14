@@ -1,122 +1,131 @@
 import { useState } from 'react';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 import { Menu, X, Sun, Moon } from 'lucide-react';
-// import { ChevronDown } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { useTheme } from 'next-themes';
-import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
-// import { ibsServices } from '../../data/ibsServices';
-// import { ourServices } from '../../data/ourServices';
-// import { products } from '../../data/products';
-
 
 const navigation = [
-  { name: 'Services', href: '/services' },
-  { name: 'Industries', href: '/industries' },
+  { name: 'Home', href: '/' }, 
+  { name: 'Services', href: '/services' }, 
   { name: 'Products', href: '/products' },
-  { name: 'About', href: '/about' },
-  { name: 'Contact', href: '/contact' }
+  { name: 'About Us', href: '/about' },
+  { name: 'Contact', href: '/contact' },
 ];
 
 export function Header() {
-  const { theme, setTheme } = useTheme();
-  const [menuOpen, setMenuOpen] = useState(false);
+  const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
+  const { theme, setTheme } = useTheme();  // Theme hook for light/dark theme
+  const location = useLocation();
 
   return (
-    <header className="fixed w-full z-50 bg-white dark:bg-gray-900">
-      {/* Top Bar */}
-      {/* <div className="bg-gray-100 dark:bg-gray-800">
-        <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex h-10 items-center justify-between text-sm">
-            <div className="flex items-center space-x-6">
-              <span className="text-gray-600 dark:text-gray-400">
-                PKR572.32 | -0.03736%
-              </span>
-            </div>
-            <div className="flex items-center space-x-6">
-              <Link to="/careers" className="text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400">
-                Careers
+    <header className="fixed w-full bg-white/80 dark:bg-gray-900/80 backdrop-blur-md z-50 border-b border-gray-200 dark:border-gray-800">
+      <nav className="mx-auto flex max-w-7xl items-center justify-between p-4 lg:px-8" aria-label="Global">
+        <div className="flex lg:flex-1">
+          <Link to="/" className="-m-1.5 p-1.5">
+            <img
+              className="h-8 w-auto lg:h-12"
+              src="/comvision-logo.png"
+              alt="Comvision"
+            />
+          </Link>
+        </div>
+        <div className="flex gap-2">
+          {/* Mobile theme toggle button */}
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+            className="lg:hidden"
+          >
+            {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          </Button>
+          {/* Mobile menu button */}
+          <Button
+            variant="ghost"
+            className="lg:hidden"
+            onClick={() => setMobileMenuOpen(true)}
+          >
+            <Menu className="h-6 w-6" />
+          </Button>
+        </div>
+        {/* Desktop navigation */}
+        <div className="hidden lg:flex lg:gap-x-8">
+          {navigation.map((item) => {
+            const isActive = location.pathname === item.href;
+            return (
+              <Link
+                key={item.name}
+                to={item.href}
+                className={`text-sm font-semibold leading-6 transition-colors ${
+                  isActive
+                    ? 'text-teal-600 dark:text-teal-400'
+                    : 'text-gray-900 dark:text-gray-100 hover:text-teal-600 dark:hover:text-teal-400'
+                }`}
+              >
+                {item.name}
               </Link>
-              <button className="flex items-center text-gray-600 dark:text-gray-400">
-                <span>PK</span>
-                <ChevronDown className="ml-1 h-4 w-4" />
-              </button>
+            );
+          })}
+        </div>
+        {/* Desktop theme toggle button */}
+        <div className="hidden lg:flex lg:flex-1 lg:justify-end gap-4">
+          <Button
+            variant="ghost"
+            size="icon"
+            onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
+          >
+            {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
+          </Button>
+          <Button>Contact Sales</Button>
+        </div>
+      </nav>
+
+      {/* Mobile menu */}
+      <div className={`lg:hidden ${mobileMenuOpen ? 'fixed inset-0 z-50' : 'hidden'}`}>
+        <div className="fixed inset-0 bg-black/20 backdrop-blur-sm dark:bg-gray-900/80" onClick={() => setMobileMenuOpen(false)} />
+        <div className="fixed inset-y-0 right-0 z-50 w-full overflow-y-auto bg-white dark:bg-gray-900 px-6 py-6 sm:max-w-sm sm:ring-1 sm:ring-gray-900/10">
+          <div className="flex items-center justify-between">
+            <Link to="/" className="-m-1.5 p-1.5" onClick={() => setMobileMenuOpen(false)}>
+              <img
+                className="h-8 w-auto"
+                src="/comvision-logo.png"
+                alt="Comvision"
+              />
+            </Link>
+            <Button
+              variant="ghost"
+              onClick={() => setMobileMenuOpen(false)}
+            >
+              <X className="h-6 w-6" />
+            </Button>
+          </div>
+          <div className="mt-6 flow-root">
+            <div className="-my-6 divide-y divide-gray-200 dark:divide-gray-800">
+              <div className="space-y-2 py-6">
+                {navigation.map((item) => {
+                  const isActive = location.pathname === item.href;
+                  return (
+                    <Link
+                      key={item.name}
+                      to={item.href}
+                      className={`-mx-3 block rounded-lg px-3 py-2 text-base font-semibold leading-7 ${
+                        isActive
+                          ? 'text-teal-600 dark:text-teal-400 bg-teal-50 dark:bg-teal-900/50'
+                          : 'text-gray-900 dark:text-gray-100 hover:bg-gray-50 dark:hover:bg-gray-800'
+                      }`}
+                      onClick={() => setMobileMenuOpen(false)}
+                    >
+                      {item.name}
+                    </Link>
+                  );
+                })}
+              </div>
+              <div className="py-6">
+                <Button className="w-full">Contact Sales</Button>
+              </div>
             </div>
           </div>
         </div>
-      </div> */}
-
-      {/* Main Navigation */}
-      <div className="bg-white dark:bg-gray-900 border-b border-gray-200 dark:border-gray-800">
-        <nav className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-          <div className="flex h-16 items-center justify-between">
-            {/* Logo */}
-            <div className="flex">
-              <Link to="/" className="-m-1.5 p-1.5">
-                <span className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-teal-500">
-                <img
-                  className="h-12 w-auto mb-4 mt-4"
-                  src="https://www.comvision.pk/Assets/images/Logo/Logo-Comvision-nav.png"
-                  alt="Comvision"
-                />
-                </span>
-              </Link>
-            </div>
-
-            {/* Desktop Navigation */}
-            <div className="hidden lg:flex space-x-8">
-              {navigation.map((item) => (
-                <Link
-                  key={item.name}
-                  to={item.href}
-                  className="text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400"
-                >
-                  {item.name}
-                </Link>
-              ))}
-            </div>
-
-            {/* Theme Toggle & Mobile Menu */}
-            <div className="flex items-center space-x-4 lg:hidden">
-              <Button
-                variant="ghost"
-                size="icon"
-                onClick={() => setTheme(theme === 'dark' ? 'light' : 'dark')}
-              >
-                {theme === 'dark' ? <Sun className="h-5 w-5" /> : <Moon className="h-5 w-5" />}
-              </Button>
-              <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
-                <SheetTrigger asChild>
-                  <Button variant="ghost">
-                    {menuOpen ? <X className="h-6 w-6" /> : <Menu className="h-6 w-6" />}
-                  </Button>
-                </SheetTrigger>
-                <SheetContent side="right" className="w-[300px] sm:w-[400px]">
-                  <SheetHeader>
-                    <SheetTitle>
-                      <Link to="/" className="text-2xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-teal-600 to-teal-500">
-                        ComVision
-                      </Link>
-                    </SheetTitle>
-                  </SheetHeader>
-                  <div className="mt-6">
-                    <nav className="flex flex-col space-y-4">
-                      {navigation.map((item) => (
-                        <Link
-                          key={item.name}
-                          to={item.href}
-                          className="text-gray-600 dark:text-gray-400 hover:text-teal-600 dark:hover:text-teal-400"
-                        >
-                          {item.name}
-                        </Link>
-                      ))}
-                    </nav>
-                  </div>
-                </SheetContent>
-              </Sheet>
-            </div>
-          </div>
-        </nav>
       </div>
     </header>
   );
