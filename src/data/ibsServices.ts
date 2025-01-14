@@ -43,7 +43,7 @@ export const ibsServices: IBSService[] = [
     icon: Scale,
     description: "Precision digital weighing solutions",
     href: "weighing-scales",
-    image: "https://images.unsplash.com/photo-1591385412068-8d0184b43d66?q=80&w=2000&auto=format&fit=crop"
+    image: "https://www.comvision.pk/Assets/images/OperationalServices/Digital%20Weighing%20Scales.png"
   },
   {
     title: "Thermal & Barcode Rolls Distribution",
