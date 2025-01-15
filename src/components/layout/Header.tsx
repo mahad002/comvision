@@ -1,6 +1,7 @@
 import { useState } from 'react';
 import { Link, useLocation } from 'react-router-dom';
-import { Menu, X, Sun, Moon } from 'lucide-react';
+import { Menu, Sun, Moon } from 'lucide-react';
+// import {  X } from 'lucide-react';
 import { Button } from "@/components/ui/button";
 import { useTheme } from 'next-themes';
 import { Sheet, SheetContent, SheetHeader, SheetTitle, SheetTrigger } from "@/components/ui/sheet";
@@ -46,26 +47,26 @@ export function Header() {
           <Sheet open={menuOpen} onOpenChange={setMenuOpen}>
             <SheetTrigger asChild>
               <Button
-          variant="ghost"
-          className="lg:hidden"
-              >
-          <Menu className="h-6 w-6" />
+                variant="ghost"
+                className="lg:hidden"
+                    >
+                <Menu className="h-6 w-6" />
               </Button>
             </SheetTrigger>
             <SheetContent side="right" className="lg:hidden">
               <SheetHeader>
-          <SheetTitle>
-            <div className="flex items-center justify-between">
-              <Link to="/" className="-m-1.5 p-1.5" onClick={handleCloseMenu}>
-                <img
-            className="h-8 w-auto"
-            src="https://www.comvision.pk/Assets/images/Logo/Logo-Comvision-nav.png"
-            alt="Comvision"
-                />
-              </Link>
-              <Button variant="ghost" onClick={handleCloseMenu}>
+                <SheetTitle>
+                  <div className="flex items-center justify-between">
+                    <Link to="/" className="-m-1.5 p-1.5" onClick={handleCloseMenu}>
+                      <img
+                        className="h-8 w-auto"
+                        src="https://www.comvision.pk/Assets/images/Logo/Logo-Comvision-nav.png"
+                        alt="Comvision"
+                      />
+                    </Link>
+              {/* <Button variant="ghost" onClick={handleCloseMenu}>
                 <X className="h-6 w-6" />
-              </Button>
+              </Button> */}
             </div>
           </SheetTitle>
               </SheetHeader>
