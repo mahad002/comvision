@@ -1,5 +1,6 @@
 import { motion } from 'framer-motion';
 import { AboutSection } from '@/components/sections/AboutSection';
+import { TechnologiesSection } from '@/components/sections/TechnologiesSection';
 
 export function AboutPage() {
   return (
@@ -25,7 +26,7 @@ export function AboutPage() {
       <section className="py-12 lg:py-16">
         <div className="mx-auto max-w-7xl px-4 sm:px-6 lg:px-8">
           <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center mb-16">
-            {/* Content Placeholder */}
+            {/* Content */}
             <motion.div
               initial={{ opacity: 0, x: -20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -36,11 +37,11 @@ export function AboutPage() {
                 Our Story
               </h2>
               <p className="text-gray-600 dark:text-gray-300">
-              ComVision started as a small team of passionate developers with a vision to revolutionize the software industry. Over the years, we have grown into a dynamic company that values innovation, quality, and customer satisfaction. Our mission is to deliver cutting-edge software solutions that empower businesses to achieve their goals and stay ahead in a competitive market. We are committed to continuous improvement and excellence in everything we do, ensuring that our clients receive the best possible service and support.
+                ComVision started as a small team of passionate developers with a vision to revolutionize the software industry. Over the years, we have grown into a dynamic company that values innovation, quality, and customer satisfaction. Our mission is to deliver cutting-edge software solutions that empower businesses to achieve their goals and stay ahead in a competitive market. We are committed to continuous improvement and excellence in everything we do, ensuring that our clients receive the best possible service and support.
               </p>
             </motion.div>
 
-            {/* Media Placeholder */}
+            {/* Media */}
             <motion.div
               initial={{ opacity: 0, x: 20 }}
               animate={{ opacity: 1, x: 0 }}
@@ -56,6 +57,7 @@ export function AboutPage() {
         </div>
       </section>
 
+      <TechnologiesSection />
       <AboutSection />
     </div>
   );
