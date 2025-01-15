@@ -36,7 +36,7 @@ export function AboutPage() {
                 Our Story
               </h2>
               <p className="text-gray-600 dark:text-gray-300">
-                Add your custom content, images, and videos here to tell your company's story.
+              ComVision started as a small team of passionate developers with a vision to revolutionize the software industry. Over the years, we have grown into a dynamic company that values innovation, quality, and customer satisfaction. Our mission is to deliver cutting-edge software solutions that empower businesses to achieve their goals and stay ahead in a competitive market. We are committed to continuous improvement and excellence in everything we do, ensuring that our clients receive the best possible service and support.
               </p>
             </motion.div>
 
@@ -47,9 +47,10 @@ export function AboutPage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden"
             >
-              <div className="w-full h-full flex items-center justify-center text-gray-400">
-                Add your media content here
-              </div>
+              <video className="w-full h-full" controls poster="https://www.comvision.pk/Assets/images/thumb-hrm.png">
+                <source src="https://www.comvision.pk/Assets/video/HRM-Video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </motion.div>
           </div>
         </div>

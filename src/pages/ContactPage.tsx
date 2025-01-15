@@ -32,12 +32,18 @@ export function ContactPage() {
               transition={{ duration: 0.5, delay: 0.2 }}
               className="space-y-6"
             >
-              <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+              {/* <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
                 Visit Our Office
-              </h2>
-              <p className="text-gray-600 dark:text-gray-300">
-                Add your custom content, images, and videos here to showcase your office and team.
-              </p>
+              </h2> */}
+                <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
+                Who We Are
+                </h2>
+                <p className="text-gray-600 dark:text-gray-300">
+                Customized software solutions for all businesses
+                </p>
+                <p className="text-gray-600 dark:text-gray-300">
+                With its diamond jubilee in the industry, ComVision aims to be the most reliable software company. We deal in customized software solutions for all kinds of business. Our vision is to provide clients with the latest technological solutions and not just the basic package. We have tailored solutions and products according to the requirements and needs of the client. Here at ComVision, client satisfaction is all that matters. From simple inventory management system to customized point of sale solution, BI reporting, finance management, employee management, attendance management, central management system(single/multiple branch(es)), and cloud based web-app, ComVision gives you an all-in-one package to help you run your business efficiently.
+                </p>
             </motion.div>
 
             {/* Media Placeholder */}
@@ -47,9 +53,10 @@ export function ContactPage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden"
             >
-              <div className="w-full h-full flex items-center justify-center text-gray-400">
-                Add your media content here
-              </div>
+              <video className="w-full h-full" controls poster="https://www.comvision.pk/Assets/images/thumb-hrm.png">
+                <source src="https://www.comvision.pk/Assets/video/HRM-Video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </motion.div>
           </div>
         </div>
