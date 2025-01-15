@@ -36,9 +36,10 @@ export function ProductsPage() {
               <h2 className="text-3xl font-bold text-gray-900 dark:text-white">
                 Transform Your Business
               </h2>
-              <p className="text-gray-600 dark:text-gray-300">
-                Add your custom content, images, and videos here to showcase your products in detail.
-              </p>
+                <p className="text-gray-600 dark:text-gray-300">
+                {/* Add your custom content, images, and videos here to showcase your products in detail. */}
+                Empowering your business with innovative solutions. Our products are designed to meet the unique needs of your business, providing you with the tools and resources necessary to succeed in today's competitive market. From advanced analytics to seamless integration, our solutions are built to enhance efficiency, drive growth, and ensure long-term success. Discover how our cutting-edge technology can transform your operations and take your business to the next level.
+                </p>
             </motion.div>
 
             {/* Media Placeholder */}
@@ -48,9 +49,10 @@ export function ProductsPage() {
               transition={{ duration: 0.5, delay: 0.3 }}
               className="aspect-video bg-gray-100 dark:bg-gray-800 rounded-lg overflow-hidden"
             >
-              <div className="w-full h-full flex items-center justify-center text-gray-400">
-                Add your media content here
-              </div>
+              <video className="w-full h-full" controls poster="https://www.comvision.pk/Assets/images/thumb-hrm.png">
+                <source src="https://www.comvision.pk/Assets/video/HRM-Video.mp4" type="video/mp4" />
+                Your browser does not support the video tag.
+              </video>
             </motion.div>
           </div>
         </div>
